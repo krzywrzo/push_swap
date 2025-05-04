@@ -1,8 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/03 11:54:59 by kwrzosek          #+#    #+#             */
+/*   Updated: 2025/05/04 14:59:48 by kwrzosek         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int main(int argc, char **argv)
 {
     int *stack_a;
+    int *stack_b;
     int stack_size;
     char **temp_stack; 
 
@@ -19,7 +32,12 @@ int main(int argc, char **argv)
         stack_size = ft_strlen(*temp_stack);
     }
     else
+    {
 		temp_stack = copy_args(argc, argv);
+    }
 	stack_a = temp_to_stack(temp_stack, stack_size);
 	free(temp_stack);
+    stack_b = malloc(sizeof(int) * stack_size);
+
+    return (0);
 }

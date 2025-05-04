@@ -1,6 +1,6 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-SRC = push_swap.c stack_manipulation.c create_stack.c
+SRC = push_swap.c stack_manipulation.c stack_manipulation_utils.c create_stack.c
 OBJS = $(SRC:.c=.o)
 NAME = push_swap
 AR = ar rcs
