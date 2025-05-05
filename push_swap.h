@@ -6,7 +6,7 @@
 /*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 11:55:07 by kwrzosek          #+#    #+#             */
-/*   Updated: 2025/05/04 15:06:17 by kwrzosek         ###   ########.fr       */
+/*   Updated: 2025/05/05 18:20:42 by kwrzosek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,6 @@
 #include <stdio.h>
 
 #include "libft/libft.h"
-
-char    *fill_stack(char *filler_values, char *stack);
-char    **copy_args(int argc, char **argv);
-int     *temp_to_stack(char **temp_stack, int stack_size);
 
 // funtions for stack manipulation
 void pa(int *stack_a, int *stack_b, int *size_a, int *size_b, int flag);
@@ -38,6 +34,11 @@ void sa(int *stack, int flag);
 void sb(int *stack, int flag);
 
 // stack manipulation utils 
+int is_valid(int *stack, int arr_size);
 void    ft_swap(int *a, int *b);
 size_t     stack_size(int *stack);
+char    *fill_stack(char *filler_values, char *stack);
+char    **copy_args(int argc, char **argv);
+int     *temp_to_stack(char **temp_stack, int stack_size);
+
 #endif
