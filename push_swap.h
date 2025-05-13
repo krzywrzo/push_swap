@@ -6,7 +6,7 @@
 /*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 11:55:07 by kwrzosek          #+#    #+#             */
-/*   Updated: 2025/05/05 18:20:42 by kwrzosek         ###   ########.fr       */
+/*   Updated: 2025/05/12 19:56:16 by kwrzosek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,27 +18,44 @@
 
 #include "libft/libft.h"
 
+typedef struct t_args
+{
+	int	*stack_a;
+	int size_a;
+	int *stack_b; 
+	int size_b;
+} s_args;
+
 // funtions for stack manipulation
-void pa(int *stack_a, int *stack_b, int *size_a, int *size_b, int flag);
-void pb(int *stack_a, int *stack_b, int *size_a, int *size_b, int flag);
+// Push operations
+void pa(s_args *args, int flag);
+void pb(s_args *args, int flag);
 
-void rra(int *stack, int ssize, int flag);
-void rrb(int *stack, int ssize, int flag);
-void ra(int *stack, int ssize, int flag);
-void rb(int *stack, int ssize, int flag);
-void rrr(int *stack_a, int *stack_b, int size_a, int size_b, int flag);
-void rr(int *stack_a, int *stack_b, int size_a, int size_b, int flag);
+// Rotate operations
+void rra(s_args *args, int flag);
+void rrb(s_args *args, int flag);
+void ra(s_args *args, int flag);
+void rb(s_args *args, int flag);
+void rrr(s_args *args, int flag);
+void rr(s_args *args, int flag);
 
-void ss(int *stack_a, int *stack_b, int flag);
-void sa(int *stack, int flag);
-void sb(int *stack, int flag);
+// Swap operations
+void ss(s_args *args, int flag);
+void sa(s_args *args, int flag);
+void sb(s_args *args, int flag);
 
 // stack manipulation utils 
-int is_valid(int *stack, int arr_size);
-void    ft_swap(int *a, int *b);
-size_t     stack_size(int *stack);
-char    *fill_stack(char *filler_values, char *stack);
-char    **copy_args(int argc, char **argv);
-int     *temp_to_stack(char **temp_stack, int stack_size);
+int			is_valid(int *stack, int arr_size);
+void		ft_swap(int *a, int *b);
+int		stack_size(int *stack);
+char    	*fill_stack(char *filler_values, char *stack);
+char    	**copy_args(int argc, char **argv);
+int     	*temp_to_stack(char **temp_stack, int stack_size);
+int 		largest(int *stack, int stack_size);
 
+// push swap functions
+void push_swap(s_args *stacks);
+int calc_cost (s_args *stacks);
+int largest(int *stack, int stack_size);
+int    find_index(int *stack, int size);
 #endif
