@@ -6,7 +6,7 @@
 /*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 18:15:32 by kwrzosek          #+#    #+#             */
-/*   Updated: 2025/05/05 18:32:04 by kwrzosek         ###   ########.fr       */
+/*   Updated: 2025/05/14 14:57:27 by kwrzosek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,20 @@
 
 int is_valid(int *stack, int arr_size)
 {
-    int i; 
+    int i = 0;
     int j;
 
-    j = 0;
-    i = 0;
-    while (i < arr_size)
+    if (!stack || arr_size <= 0)
+        return (1); // Error: Invalid stack or size
+
+    while (i < arr_size - 1)
     {
-        j = 0;
+        j = i + 1;
         while (j < arr_size)
         {
-            if (j == i)
-                j++;
-            if (stack[j] == stack[i])
-                return (1);
-            else
-                j++;
+            if (stack[i] == stack[j])
+                return (1); // Duplicate found
+            j++;
         }
         i++;
     }

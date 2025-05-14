@@ -6,7 +6,7 @@
 /*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 11:55:14 by kwrzosek          #+#    #+#             */
-/*   Updated: 2025/05/12 19:45:09 by kwrzosek         ###   ########.fr       */
+/*   Updated: 2025/05/14 18:03:45 by kwrzosek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,29 @@ void ft_swap(int *a, int *b)
 	int	temp;
 
 	temp = *a;
-	*a = *b; 
+	*a = *b;
 	*b = temp;
 }
 
-int stack_size(int *stack)
+int stack_size(char **arr)
 {
     int i;
 
     i = 0;
-    while(stack[i])
+    while (arr[i])
+        i++;
+    return (i);
+}
+
+void free_split(char **arr)
+{
+    int i;
+
+    i = 0;
+    while (arr[i])
     {
+        free(arr[i]);
         i++;
     }
-    return (i);
+    free(arr);
 }

@@ -6,7 +6,7 @@
 /*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 11:54:28 by kwrzosek          #+#    #+#             */
-/*   Updated: 2025/05/12 19:28:48 by kwrzosek         ###   ########.fr       */
+/*   Updated: 2025/05/14 16:23:41 by kwrzosek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 
 void sa(s_args *stacks, int flag)
 {
-	if (!stacks->stack_a[0] || !stacks->stack_a[1])
-		printf("To few elements in stack, operation not possible");
-	else
+	if (!stacks->stack_a || !stacks->stack_a[0] || !stacks->stack_a[1])
+    {
+        printf("to few elements in stack to perform");
+        return ;
+        }
+    else
 		ft_swap(&stacks->stack_a[0], &stacks->stack_a[1]);
 	if (flag == 1)
 		printf("sa\n");
@@ -24,9 +27,12 @@ void sa(s_args *stacks, int flag)
 
 void sb(s_args *stacks, int flag)
 {
-	if (!stacks->stack_b[0] || !stacks->stack_b[1])
-		printf("To few elements in stack, operation not possible");
-	else
+	if (!stacks->stack_a || !stacks->stack_b[0] || !stacks->stack_b[1])
+    {
+        printf("to few elements in stack to perform");
+        return ;
+    }
+    else
 		ft_swap(&stacks->stack_b[0], &stacks->stack_b[1]);
 	if (flag == 1)
 		printf("sb\n");
@@ -60,6 +66,11 @@ void ra(s_args *stacks, int flag)
 	i = 0;
 	while (i < stacks->size_a - 1)
 	{
+        if (!stacks->stack_a || stacks->size_a <= 1)
+        {
+            printf("to few elements in stack to perform");
+            return ;
+        }
 		ft_swap(&stacks->stack_a[i], &stacks->stack_a[i + 1]);
 		i++;
 	}
@@ -86,7 +97,7 @@ void rra(s_args *stacks, int flag)
     if (stacks->stack_a == NULL || stacks->size_a <= 1)
         return;
 
-    int last = stacks->stack_a[stacks->size_a - 1]; 
+    int last = stacks->stack_a[stacks->size_a - 1];
     int i = stacks->size_a - 1;
 
     while (i > 0)
@@ -104,7 +115,7 @@ void rrb(s_args *stacks, int flag)
 	if (stacks->stack_b == NULL || stacks->size_b <= 1)
 	return;
 
-	int last = stacks->stack_b[stacks->size_b - 1]; 
+	int last = stacks->stack_b[stacks->size_b - 1];
 	int i = stacks->size_b - 1;
 
 	while (i > 0)

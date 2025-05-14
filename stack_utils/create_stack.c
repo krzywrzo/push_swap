@@ -27,7 +27,10 @@ int *temp_to_stack(char **temp_stack, int stack_size)
     int *stack;
     int i;
 
-    stack = malloc(sizeof(int) * stack_size);
+    stack = calloc(stack_size, sizeof(int));
+    // stack = malloc(sizeof(int) * stack_size);
+    if (!stack)
+        return (0);
     i = 0;
     while (temp_stack[i])
     {

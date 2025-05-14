@@ -6,7 +6,7 @@
 /*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 18:47:46 by kwrzosek          #+#    #+#             */
-/*   Updated: 2025/05/13 13:27:48 by kwrzosek         ###   ########.fr       */
+/*   Updated: 2025/05/14 18:38:59 by kwrzosek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int calc_cost (s_args *stacks)
 {
-    int cost = 0; 
+    int cost;
     int largest_b;
     int i;
 
@@ -28,13 +28,18 @@ int calc_cost (s_args *stacks)
     return (cost);
 }
 
+
+
 void push_swap(s_args *stacks)
 {
     int cost;
     int min_cost;
-    
-    stacks->size_b = stack_size(stacks->stack_b);
+
+    stacks->size_b = 0;
     pb(stacks, 1);
+    stacks->size_b++;
     pb(stacks, 1);
-    printf("cost: %i", calc_cost(stacks));    
+    stacks->size_b++;
+
+    printf("cost: %i", calc_cost(stacks));
 }
