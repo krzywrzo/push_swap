@@ -6,7 +6,7 @@
 /*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 11:54:59 by kwrzosek          #+#    #+#             */
-/*   Updated: 2025/05/14 18:33:32 by kwrzosek         ###   ########.fr       */
+/*   Updated: 2025/05/15 17:13:40 by kwrzosek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int main(int argc, char **argv)
     {
         temp_stack = ft_split(argv[1], ' ');
         stacks->size_a = stack_size(temp_stack);
-        printf("size: %i", stacks->size_a);
+        // printf("size: %i", stacks->size_a);
     }
     else
         temp_stack = copy_args(argc, argv);

@@ -6,7 +6,7 @@
 /*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 11:55:07 by kwrzosek          #+#    #+#             */
-/*   Updated: 2025/05/14 18:21:16 by kwrzosek         ###   ########.fr       */
+/*   Updated: 2025/05/15 20:11:29 by kwrzosek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,14 @@ void	free_split(char **arr);
 char	*fill_stack(char *filler_values, char *stack);
 char	**copy_args(int argc, char **argv);
 int		*temp_to_stack(char **temp_stack, int stack_size);
-int		largest(int *stack, int stack_size);
+
 
 // push swap functions
 void	push_swap(s_args *stacks);
 int		calc_cost(s_args *stacks);
-int		largest(int *stack, int stack_size);
-int		find_index(int *stack, int size);
+int largest(int *stack, int size);
+int smallest(int *stack, int size);
+int		find_index_in_b (int *stack_b, int size_b, int push_candidate);
+int		find_index_in_a (int *stack_a, int size_a, int push_candidate);
+int find_index (int *stack, int size, int num);
 #endif
