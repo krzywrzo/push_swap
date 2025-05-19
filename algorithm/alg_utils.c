@@ -6,7 +6,7 @@
 /*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 16:40:42 by kwrzosek          #+#    #+#             */
-/*   Updated: 2025/05/15 20:23:12 by kwrzosek         ###   ########.fr       */
+/*   Updated: 2025/05/19 18:05:59 by kwrzosek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ int		find_index_in_b (int *stack_b, int size_b, int push_candidate)
 	int	smallest_b;
 
 	i = 1;
-
 	if (push_candidate > stack_b[i] && push_candidate < stack_b[size_b - 1])
 		i = 0;
 	else if (push_candidate > largest(stack_b, size_b) || push_candidate < smallest(stack_b, size_b))
@@ -92,22 +91,4 @@ int		find_index_in_b (int *stack_b, int size_b, int push_candidate)
 			i++;
 	}
 	return (i);
-
-	// if (push_candidate > largest(stack_b, size_b))
-	// 	return (0);
-	// else if (push_candidate < smallest(stack_b, size_b))
-	// 	return (size_b);
-	// else 
-	// {
-	// 	while (i < size_b)
-	// 	{
-	// 		if (push_candidate > stack_b[i])
-	// 		{
-	// 			if (push_candidate < stack_b[i + 1])
-	// 				return (i + 1);
-	// 		}
-	// 		i++;
-	// 	}
-	// }
-	// return (i + 1);
 }
