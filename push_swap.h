@@ -6,7 +6,7 @@
 /*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 11:55:07 by kwrzosek          #+#    #+#             */
-/*   Updated: 2025/05/19 17:02:50 by kwrzosek         ###   ########.fr       */
+/*   Updated: 2025/05/20 14:14:15 by kwrzosek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,6 @@ int smallest(int *stack, int size);
 int		find_index_in_b (int *stack_b, int size_b, int push_candidate);
 int		find_index_in_a (int *stack_a, int size_a, int push_candidate);
 int find_index (int *stack, int size, int num);
+
+void print_stacks(s_args *stacks);
 #endif
