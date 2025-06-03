@@ -6,7 +6,7 @@
 /*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 11:55:14 by kwrzosek          #+#    #+#             */
-/*   Updated: 2025/05/14 18:03:45 by kwrzosek         ###   ########.fr       */
+/*   Updated: 2025/06/03 18:56:37 by kwrzosek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,16 @@ void free_split(char **arr)
         i++;
     }
     free(arr);
+}
+
+void    free_stack(s_args *stacks)
+{
+    free(stacks->stack_a);
+    free(stacks->stack_b);
+    free(stacks);
+}
+int print_error()
+{
+    write(2, "Error\n", 6);
+    return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 11:54:28 by kwrzosek          #+#    #+#             */
-/*   Updated: 2025/05/14 16:23:41 by kwrzosek         ###   ########.fr       */
+/*   Updated: 2025/06/03 18:59:02 by kwrzosek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,7 +134,6 @@ void pb(s_args *args, int flag)
 
     if (args->size_a == 0)
     {
-        printf("Stack A is empty, cannot perform pb\n");
         return;
     }
     i = args->size_b;
@@ -162,8 +161,7 @@ void pa(s_args *args, int flag)
 
     if (args->size_b == 0)
     {
-        printf("Stack B is empty, cannot perform pa\n");
-        return;
+
     }
     i = args->size_a;
     while (i > 0)

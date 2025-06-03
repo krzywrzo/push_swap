@@ -6,7 +6,7 @@
 /*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 18:47:46 by kwrzosek          #+#    #+#             */
-/*   Updated: 2025/06/03 15:06:13 by kwrzosek         ###   ########.fr       */
+/*   Updated: 2025/06/03 16:12:33 by kwrzosek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,10 @@ int calc_cost_optimized(s_args *stacks, int a_index)
 	int size_a = stacks->size_a;
 	int size_b = stacks->size_b;
 
-	int cost_rr = max(a_index, b_index);                                
-	int cost_rrr = max(size_a - a_index, size_b - b_index);             
-	int cost_ra_rrb = a_index + (size_b - b_index);                     
-	int cost_rra_rb = (size_a - a_index) + b_index;                     
+	int cost_rr = max(a_index, b_index);
+	int cost_rrr = max(size_a - a_index, size_b - b_index);
+	int cost_ra_rrb = a_index + (size_b - b_index);
+	int cost_rra_rb = (size_a - a_index) + b_index;
 
 	int min_cost = cost_rr;
 	min_cost = min(min_cost, cost_rrr);
@@ -133,7 +133,7 @@ void push_swap(s_args *stacks)
     int *cost_arr;
     int i;
     int min_cost;
-    
+
     stacks->stack_b = malloc(sizeof(int) * stacks->size_a);
     stacks->size_b = 0;
     pb(stacks, 1);
@@ -170,6 +170,7 @@ void push_swap(s_args *stacks)
         if (stacks->size_a > 1 && stacks->stack_a[0] > stacks->stack_a[1])
             sa(stacks, 1);
     }
-    free(stacks->stack_b);
+    // free_stack(stacks);
+    // free(stacks->stack_b);
 
 }
