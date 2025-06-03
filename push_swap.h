@@ -6,7 +6,7 @@
 /*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 11:55:07 by kwrzosek          #+#    #+#             */
-/*   Updated: 2025/05/20 14:14:15 by kwrzosek         ###   ########.fr       */
+/*   Updated: 2025/05/29 19:50:36 by kwrzosek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,20 @@ int		*temp_to_stack(char **temp_stack, int stack_size);
 // push swap functions
 void	push_swap(s_args *stacks);
 int calc_cost (s_args *stacks, int i);
-int largest(int *stack, int size);
-int smallest(int *stack, int size);
 int		find_index_in_b (int *stack_b, int size_b, int push_candidate);
 int		find_index_in_a (int *stack_a, int size_a, int push_candidate);
 int find_index (int *stack, int size, int num);
+
+// algorithm utils
+int which_smaller(int a, int b);
+int largest(int *stack, int size);
+int smallest(int *stack, int size);
+int abs (int a);
+
+void rotate(s_args *stacks, int a_index, int b_index);
+void mixed_rotate(s_args *stacks, int a_index, int b_index);
+void reverse_rotate(s_args *stacks, int a_index, int b_index);
+void mixed_rrotate(s_args *stacks, int a_index, int b_index);
 
 void print_stacks(s_args *stacks);
 #endif

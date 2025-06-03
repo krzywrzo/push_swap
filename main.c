@@ -6,7 +6,7 @@
 /*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 11:54:59 by kwrzosek          #+#    #+#             */
-/*   Updated: 2025/05/20 17:06:16 by kwrzosek         ###   ########.fr       */
+/*   Updated: 2025/06/03 15:04:39 by kwrzosek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,5 @@ int main(int argc, char **argv)
         return(1);
     }
     push_swap(stacks);
-    // print_stacks(stacks);
-    // free(stacks);
 }
 
