@@ -1,5 +1,6 @@
 CC = cc
-#CFLAGS = -Wall -Wextra -Werror
+# CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -g
 SRC = main.c stack_utils/stack_manipulation.c stack_utils/stack_manipulation_utils.c \
 stack_utils/create_stack.c stack_utils/stack_validate.c \
 algorithm/push_swap.c algorithm/alg_utils.c
