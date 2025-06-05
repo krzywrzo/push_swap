@@ -6,7 +6,7 @@
 /*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 11:54:28 by kwrzosek          #+#    #+#             */
-/*   Updated: 2025/06/04 16:16:13 by kwrzosek         ###   ########.fr       */
+/*   Updated: 2025/06/05 18:49:01 by kwrzosek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	sa(s_args *stacks, int flag)
 {
-	if (!stacks->stack_a || !stacks->stack_a[0] || !stacks->stack_a[1])
+	if (!stacks->stack_a || !stacks->stack_a[0])
 	{
 		printf("to few elements in stack to perform");
 		return ;
@@ -27,7 +27,7 @@ void	sa(s_args *stacks, int flag)
 
 void	sb(s_args *stacks, int flag)
 {
-	if (!stacks->stack_a || !stacks->stack_b[0] || !stacks->stack_b[1])
+	if (!stacks->stack_a || !stacks->stack_b[0])
 	{
 		printf("to few elements in stack to perform");
 		return ;

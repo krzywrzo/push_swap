@@ -6,7 +6,7 @@
 /*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 11:55:07 by kwrzosek          #+#    #+#             */
-/*   Updated: 2025/06/04 20:00:26 by kwrzosek         ###   ########.fr       */
+/*   Updated: 2025/06/05 16:12:03 by kwrzosek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	sb(s_args *args, int flag);
 
 // stack manipulation utils
 // int		is_valid(int *stack, int arr_size);
-int		is_valid(char **temp_stack);
+int		is_valid(s_args *stacks);
 void	ft_swap(int *a, int *b);
 int		stack_size(char **arr);
 void	free_split(char **arr);
@@ -54,7 +54,9 @@ void	free_stack(s_args *stacks);
 char	*fill_stack(char *filler_values, char *stack);
 char	**copy_args(int argc, char **argv);
 int		*temp_to_stack(char **temp_stack, int stack_size);
-
+int	is_in_bounds(char **temp_stack);
+int	is_valid_input(char **args);
+int	is_valid_stack(int *stack, int size);
 // push swap functions
 void	push_swap(s_args *stacks);
 int		calc_cost(s_args *stacks, int i);
