@@ -6,7 +6,7 @@
 /*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 11:55:14 by kwrzosek          #+#    #+#             */
-/*   Updated: 2025/06/04 18:34:04 by kwrzosek         ###   ########.fr       */
+/*   Updated: 2025/06/09 11:25:00 by kwrzosek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,39 +74,18 @@ void	free_stack(s_args *stacks)
 }
 void	print_error(char **temp_stack, s_args *stacks, int flag)
 {
-	// if (flag == 0)
-	// // ft_putstr_fd("Error\n", STDERR_FILENO);
-	// 	// return (write(2, "Error\n", 6));
-	// else if (flag == 1)
-	// {
-	// 	free_stack(stacks);
-	// 	ft_putstr_fd("Error\n", STDERR_FILENO);
-	// 	// return (write(2, "Error\n", 6));
-	// }
-	// else if (flag == 2)
-	// {
-	// 	free_stack(stacks);
-	// 	free_split(temp_stack);
-	// 	ft_putstr_fd("Error\n", STDERR_FILENO);
-	// 	// return (write(2, "Error\n", 6));
-	// }
 	if (flag == 0)
-	// ft_putstr_fd("Error\n", STDERR_FILENO);
 		write(STDERR_FILENO, "Error\n", 6);
 	else if (flag == 1)
 	{
 		free_stack(stacks);
-		// ft_putstr_fd("Error\n", STDERR_FILENO);
 		write(STDERR_FILENO, "Error\n", 6);
-
 	}
 	else if (flag == 2)
 	{
 		free_stack(stacks);
 		free_split(temp_stack);
-		// ft_putstr_fd("Error\n", STDERR_FILENO);
 		write(STDERR_FILENO, "Error\n", 6);
-
 	}
 	exit(0);
 }

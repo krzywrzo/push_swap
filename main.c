@@ -6,7 +6,7 @@
 /*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 20:10:15 by kwrzosek          #+#    #+#             */
-/*   Updated: 2025/06/05 18:49:05 by kwrzosek         ###   ########.fr       */
+/*   Updated: 2025/06/09 13:01:12 by kwrzosek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	main(int argc, char **argv)
 	free_split(temp_stack);
 	if (stacks->size_a <= 3)
 		sort_three(stacks);
-	else
+		else
 		push_swap(stacks);
 	// print_stacks(stacks);
 	free_stack(stacks);

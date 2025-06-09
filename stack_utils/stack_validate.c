@@ -6,7 +6,7 @@
 /*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 18:15:32 by kwrzosek          #+#    #+#             */
-/*   Updated: 2025/06/05 16:56:17 by kwrzosek         ###   ########.fr       */
+/*   Updated: 2025/06/09 11:45:20 by kwrzosek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,7 @@ int	is_numeric(char *str)
 	return (0);
 }
 
-
-long	ft_atol(const char *str) // simple atoi as long
+long	ft_atol(const char *str)
 {
 	int		sign = 1;
 	long	result = 0;
@@ -60,7 +59,6 @@ int	is_in_bounds(char **args)
 	}
 	return (0);
 }
-
 
 int	has_duplicates(int *stack, int size)
 {

@@ -6,7 +6,7 @@
 /*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 11:55:07 by kwrzosek          #+#    #+#             */
-/*   Updated: 2025/06/05 16:12:03 by kwrzosek         ###   ########.fr       */
+/*   Updated: 2025/06/06 12:48:35 by kwrzosek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ int		*temp_to_stack(char **temp_stack, int stack_size);
 int	is_in_bounds(char **temp_stack);
 int	is_valid_input(char **args);
 int	is_valid_stack(int *stack, int size);
+long ft_atol(const char *str);
 // push swap functions
 void	push_swap(s_args *stacks);
 int		calc_cost(s_args *stacks, int i);
