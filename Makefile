@@ -1,9 +1,10 @@
-CC = cc
+`CC = cc
 # CFLAGS = -Wall -Wextra -Werror
 CFLAGS = -g
-SRC = main.c stack_utils/stack_manipulation.c stack_utils/stack_manipulation_utils.c \
-stack_utils/create_stack.c stack_utils/stack_validate.c \
-algorithm/push_swap.c algorithm/alg_utils.c
+SRC = main.c \
+	algorithm/alg_utils.c algorithm/cost_utils.c algorithm/find_index.c algorithm/push_swap_utils.c algorithm/push_swap.c algorithm/strategies.c \
+	stack_manipulate/push.c stack_manipulate/reverse_rotate.c stack_manipulate/rotate.c stack_manipulate/stack_manipulation_utils.c stack_manipulate/swap.c \
+	stack_utils/create_stack.c stack_utils/stack_validate.c
 OBJS = $(SRC:.c=.o)
 NAME = push_swap
 AR = ar rcs

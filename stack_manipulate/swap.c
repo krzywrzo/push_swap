@@ -1,45 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   alg_utils.c                                        :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/12 16:40:42 by kwrzosek          #+#    #+#             */
-/*   Updated: 2025/06/10 17:08:21 by kwrzosek         ###   ########.fr       */
+/*   Created: 2025/06/09 18:12:55 by kwrzosek          #+#    #+#             */
+/*   Updated: 2025/06/09 19:07:00 by kwrzosek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	largest(int *stack, int size)
+void	sa(t_args *stacks, int flag)
 {
-	int	i;
-	int	max;
-
-	i = 0;
-	max = stack[0];
-	while (i < size)
-	{
-		if (max < stack[i])
-			max = stack[i];
-		i++;
-	}
-	return (max);
+	if (!stacks->stack_a || stacks->size_a < 2)
+		return ;
+	ft_swap(&stacks->stack_a[0], &stacks->stack_a[1]);
+	if (flag == 1)
+		printf("sa\n");
 }
 
-int	smallest(int *stack, int size)
+void	sb(t_args *stacks, int flag)
 {
-	int	i;
-	int	min;
+	if (!stacks->stack_b || stacks->size_b < 2)
+		return ;
+	ft_swap(&stacks->stack_b[0], &stacks->stack_b[1]);
+	if (flag == 1)
+		printf("sb\n");
+}
 
-	i = 1;
-	min = stack[0];
-	while (i < size)
-	{
-		if (min > stack[i])
-			min = stack[i];
-		i++;
-	}
-	return (min);
+void	ss(t_args *stacks, int flag)
+{
+	sa(stacks, 0);
+	sb(stacks, 0);
+	printf("ss\n");
 }
