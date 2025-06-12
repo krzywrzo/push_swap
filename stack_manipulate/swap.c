@@ -6,7 +6,7 @@
 /*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 18:12:55 by kwrzosek          #+#    #+#             */
-/*   Updated: 2025/06/09 19:07:00 by kwrzosek         ###   ########.fr       */
+/*   Updated: 2025/06/12 13:51:57 by kwrzosek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	sb(t_args *stacks, int flag)
 		printf("sb\n");
 }
 
-void	ss(t_args *stacks, int flag)
+void	ss(t_args *stacks)
 {
 	sa(stacks, 0);
 	sb(stacks, 0);

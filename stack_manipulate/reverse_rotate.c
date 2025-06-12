@@ -6,7 +6,7 @@
 /*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 18:35:06 by kwrzosek          #+#    #+#             */
-/*   Updated: 2025/06/09 19:06:32 by kwrzosek         ###   ########.fr       */
+/*   Updated: 2025/06/12 13:50:08 by kwrzosek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	rrb(t_args *stacks, int flag)
 		printf("rrb\n");
 }
 
-void	rrr(t_args *stacks, int flag)
+void	rrr(t_args *stacks)
 {
 	rra(stacks, 0);
 	rrb(stacks, 0);

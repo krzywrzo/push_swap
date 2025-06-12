@@ -1,6 +1,5 @@
-`CC = cc
-# CFLAGS = -Wall -Wextra -Werror
-CFLAGS = -g
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
 SRC = main.c \
 	algorithm/alg_utils.c algorithm/cost_utils.c algorithm/find_index.c algorithm/push_swap_utils.c algorithm/push_swap.c algorithm/strategies.c \
 	stack_manipulate/push.c stack_manipulate/reverse_rotate.c stack_manipulate/rotate.c stack_manipulate/stack_manipulation_utils.c stack_manipulate/swap.c \
@@ -15,7 +14,7 @@ HEADER = push_swap.h
 all: $(LIBFT) $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(OBJS) $(LIBFT) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 
 $(LIBFT):
 	make -C $(LIB_PATH) all

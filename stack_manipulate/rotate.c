@@ -6,13 +6,13 @@
 /*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 18:11:29 by kwrzosek          #+#    #+#             */
-/*   Updated: 2025/06/09 19:06:43 by kwrzosek         ###   ########.fr       */
+/*   Updated: 2025/06/12 13:51:35 by kwrzosek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	rr(t_args *stacks, int flag)
+void	rr(t_args *stacks)
 {
 	ra(stacks, 0);
 	rb(stacks, 0);

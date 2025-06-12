@@ -6,7 +6,7 @@
 /*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 19:16:54 by kwrzosek          #+#    #+#             */
-/*   Updated: 2025/06/10 18:01:39 by kwrzosek         ###   ########.fr       */
+/*   Updated: 2025/06/12 13:31:54 by kwrzosek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	calc_min_cost(t_args *stacks, t_cost *cost)
 
 	i = 0;
 	cost_arr = malloc(sizeof(int) * stacks->size_a);
-	while(i < stacks->size_a)
+	while (i < stacks->size_a)
 		cost_arr[i] = calc_cost_optimized(stacks, cost, i);
 	min_value = cost_arr[0];
 	i = 1;
@@ -73,21 +73,21 @@ void	push_a(t_args *stacks)
 	int	count;
 
 	while (stacks->size_b != 0)
+	{
+		top_of_b = stacks->stack_b[0];
+		place_in_a = find_index_in_a(stacks->stack_a, stacks->size_a, top_of_b);
+		if (place_in_a <= stacks->size_a / 2)
 		{
-			top_of_b = stacks->stack_b[0];
-			place_in_a = find_index_in_a(stacks->stack_a, stacks->size_a, top_of_b);
-			if (place_in_a <= stacks->size_a / 2)
-			{
-				count = place_in_a;
-				while (count-- > 0)
-					ra(stacks, 1);
-			}
-			else
-			{
-				count = stacks->size_a - place_in_a;
-				while (count-- > 0)
-					rra(stacks, 1);
-			}
-			pa(stacks, 1);
-		}	
+			count = place_in_a;
+			while (count-- > 0)
+				ra(stacks, 1);
+		}
+		else
+		{
+			count = stacks->size_a - place_in_a;
+			while (count-- > 0)
+				rra(stacks, 1);
+		}
+		pa(stacks, 1);
+	}
 }

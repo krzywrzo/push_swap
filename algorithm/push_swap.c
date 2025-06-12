@@ -6,7 +6,7 @@
 /*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 18:47:46 by kwrzosek          #+#    #+#             */
-/*   Updated: 2025/06/10 18:04:34 by kwrzosek         ###   ########.fr       */
+/*   Updated: 2025/06/12 14:08:42 by kwrzosek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ int	calc_cost_optimized(t_args *stacks, t_cost *cost, int a_index)
 void	do_move(t_args *stacks, t_cost *cost, int a_index)
 {
 	int	b_index;
-	int	size_a;
-	int	size_b;	
 	int	strategy;
-	
-	if (b_index == stacks->size_b)
+
 	b_index = 0;
-	b_index = find_index_in_b(stacks->stack_b, stacks->size_b, stacks->stack_a[a_index]);
+	if (b_index == stacks->size_b)
+		b_index = 0;
+	b_index = find_index_in_b(stacks->stack_b, stacks->size_b,
+			stacks->stack_a[a_index]);
 	cost_struct_filler(cost, stacks, a_index, b_index);
 	cost->min_cost = cost->cost_rr;
 	strategy = 0;
@@ -67,16 +67,17 @@ void	sort_three(t_args *stacks)
 		rra(stacks, 1);
 }
 
-void push_swap(t_args *stacks, t_cost *cost)
+void	push_swap(t_args *stacks, t_cost *cost)
 {
 	int	min_cost;
-	int	max_val;
-	int	max_idx;
 
 	stacks->stack_b = malloc(sizeof(int) * stacks->size_a);
 	stacks->size_b = 0;
+	if(is_sorted(stacks->stack_a, stacks->size_a))
+		exit(0);
 	pb(stacks, 1);
 	pb(stacks, 1);
+	printf("test");
 	while (stacks->size_a > 3)
 	{
 		min_cost = calc_min_cost(stacks, cost);

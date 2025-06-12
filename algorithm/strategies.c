@@ -6,7 +6,7 @@
 /*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 16:00:55 by kwrzosek          #+#    #+#             */
-/*   Updated: 2025/06/10 16:06:01 by kwrzosek         ###   ########.fr       */
+/*   Updated: 2025/06/12 13:50:56 by kwrzosek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	rotate(t_cost *cost, t_args *stacks)
 {
 	while (cost->ra_count > 0 && cost->rb_count > 0)
 	{
-		rr(stacks, 1);
+		rr(stacks);
 		cost->ra_count--;
 		cost->rb_count--;
 	}
@@ -30,7 +30,7 @@ void	reverse_rotate(t_cost *cost, t_args *stacks)
 {
 	while (cost->rra_count > 0 && cost->rrb_count > 0)
 	{
-		rrr(stacks, 1);
+		rrr(stacks);
 		cost->rra_count--;
 		cost->rrb_count--;
 	}

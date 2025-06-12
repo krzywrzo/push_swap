@@ -6,15 +6,15 @@
 /*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 19:21:05 by kwrzosek          #+#    #+#             */
-/*   Updated: 2025/06/10 16:36:42 by kwrzosek         ###   ########.fr       */
+/*   Updated: 2025/06/12 13:32:47 by kwrzosek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	cost_struct_filler(t_cost *cost, t_args *stacks, int a_index, int b_index)
+void	cost_struct_filler(t_cost *cost, t_args *stacks, int a_index,
+		int b_index)
 {
-	
 	cost->ra_count = a_index;
 	cost->rb_count = b_index;
 	if (a_index == 0)
@@ -50,21 +50,22 @@ int	calc_strategy(t_cost *cost)
 		cost->min_cost = cost->cost_rra_rb;
 		strategy = 3;
 	}
-	return(strategy);
+	return (strategy);
 }
 
 void	perform_strategy(t_cost *cost, t_args *stacks, int strategy)
 {
-	if (strategy == 0)  // rr
+	if (strategy == 0)
 		rotate(cost, stacks);
-	else if (strategy == 1)  // rrr
+	else if (strategy == 1)
 		reverse_rotate(cost, stacks);
-	else if (strategy == 2) 
+	else if (strategy == 2)
 		ra_rrb(cost, stacks);
-	else if (strategy == 3) 
+	else if (strategy == 3)
 		rra_rb(cost, stacks);
 	pb(stacks, 1);
 }
+
 void	calc_cost(t_cost *cost, t_args *stacks, int a_index, int b_index)
 {
 	if (a_index == 0)
@@ -84,7 +85,6 @@ void	calc_cost(t_cost *cost, t_args *stacks, int a_index, int b_index)
 	cost->min_cost = min(cost->min_cost, cost->cost_ra_rrb);
 	cost->min_cost = min(cost->min_cost, cost->cost_rra_rb);
 }
-
 
 // rev_a --> rra_count
 // rev_b --> rrb_count

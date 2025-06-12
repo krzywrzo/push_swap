@@ -6,7 +6,7 @@
 /*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 20:10:15 by kwrzosek          #+#    #+#             */
-/*   Updated: 2025/06/10 17:05:43 by kwrzosek         ###   ########.fr       */
+/*   Updated: 2025/06/12 13:49:07 by kwrzosek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,10 @@ int	main(int argc, char **argv)
 	t_cost	*cost;
 	char	**temp_stack;
 
+	temp_stack = NULL;
 	stacks = malloc(sizeof(t_args));
 	cost = malloc(sizeof(t_cost));
-	if (!stacks || argc == 1)
+	if (argc == 1)
 		print_error(NULL, stacks, cost, 1);
 	else if (argc == 2)
 		temp_stack = ft_split(argv[1], ' ');
@@ -37,8 +38,7 @@ int	main(int argc, char **argv)
 		sort_three(stacks);
 	else
 		push_swap(stacks, cost);
-	free_stack(stacks, cost);
-	return (0);
+	return (free_stack(stacks, cost), 0);
 }
 
 void	print_stacks(t_args *stacks)
