@@ -6,7 +6,7 @@
 /*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 18:11:29 by kwrzosek          #+#    #+#             */
-/*   Updated: 2025/06/12 13:51:35 by kwrzosek         ###   ########.fr       */
+/*   Updated: 2025/06/12 18:20:00 by kwrzosek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	rb(t_args *stacks, int flag)
 	if (!stacks->stack_b || stacks->size_b <= 1)
 		return ;
 	first = stacks->stack_b[0];
-	while (i < stacks->size_a - 1)
+	while (i < stacks->size_b - 1)
 	{
 		stacks->stack_b[i] = stacks->stack_b[i + 1];
 		i++;
