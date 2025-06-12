@@ -6,7 +6,7 @@
 /*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 18:47:46 by kwrzosek          #+#    #+#             */
-/*   Updated: 2025/06/12 14:08:42 by kwrzosek         ###   ########.fr       */
+/*   Updated: 2025/06/12 16:33:22 by kwrzosek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,12 @@ void	do_move(t_args *stacks, t_cost *cost, int a_index)
 	int	b_index;
 	int	strategy;
 
-	b_index = 0;
-	if (b_index == stacks->size_b)
-		b_index = 0;
 	b_index = find_index_in_b(stacks->stack_b, stacks->size_b,
 			stacks->stack_a[a_index]);
+	if (b_index == stacks->size_b)
+		b_index = 0;
 	cost_struct_filler(cost, stacks, a_index, b_index);
 	cost->min_cost = cost->cost_rr;
-	strategy = 0;
 	strategy = calc_strategy(cost);
 	perform_strategy(cost, stacks, strategy);
 }
@@ -71,13 +69,12 @@ void	push_swap(t_args *stacks, t_cost *cost)
 {
 	int	min_cost;
 
+	if (is_sorted(stacks->stack_a, stacks->size_a))
+		exit (0);
 	stacks->stack_b = malloc(sizeof(int) * stacks->size_a);
 	stacks->size_b = 0;
-	if(is_sorted(stacks->stack_a, stacks->size_a))
-		exit(0);
 	pb(stacks, 1);
 	pb(stacks, 1);
-	printf("test");
 	while (stacks->size_a > 3)
 	{
 		min_cost = calc_min_cost(stacks, cost);

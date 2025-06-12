@@ -6,7 +6,7 @@
 /*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 19:16:54 by kwrzosek          #+#    #+#             */
-/*   Updated: 2025/06/12 13:31:54 by kwrzosek         ###   ########.fr       */
+/*   Updated: 2025/06/12 16:32:11 by kwrzosek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,17 +50,20 @@ int	calc_min_cost(t_args *stacks, t_cost *cost)
 	i = 0;
 	cost_arr = malloc(sizeof(int) * stacks->size_a);
 	while (i < stacks->size_a)
-		cost_arr[i] = calc_cost_optimized(stacks, cost, i);
+	{
+		cost_arr[i++] = calc_cost_optimized(stacks, cost, i);
+	}
 	min_value = cost_arr[0];
 	i = 1;
-	while (i < stacks->size_a)
+	min_cost = 1;
+	while (i < stacks->size_a - 1)
 	{
 		if (cost_arr[i] < min_value)
 		{
 			min_value = cost_arr[i];
 			min_cost = i;
-			i++;
 		}
+		i++;
 	}
 	free(cost_arr);
 	return (min_cost);

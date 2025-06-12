@@ -6,7 +6,7 @@
 /*   By: kwrzosek <kwrzosek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 19:21:05 by kwrzosek          #+#    #+#             */
-/*   Updated: 2025/06/12 13:32:47 by kwrzosek         ###   ########.fr       */
+/*   Updated: 2025/06/12 16:30:18 by kwrzosek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int	calc_strategy(t_cost *cost)
 {
 	int	strategy;
 
+	strategy = 0;
 	if (cost->cost_rrr < cost->min_cost)
 	{
 		cost->min_cost = cost->cost_rrr;
